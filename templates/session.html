@@ -1,0 +1,16 @@
+<html>
+  <head>
+      <title>{{session}}</title>
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='session.css') }}">
+  </head>
+  <body>
+    <h1>{{session}}</h1>
+    <ul class=sessions>
+	{% for session in sessions %}
+    <li><h2><a href="session/{{session}}"> {{ session }}</a></h2>
+	{% else %}
+	<li><em>No sessions found</em>
+	{% endfor %}
+    </ul>
+  </body>
+</html>
